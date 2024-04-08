@@ -24,7 +24,7 @@ for (package in packages) {
   }
 }
 source_python("./topic_modeling/bert_topic/bert_topic.py")
-source_python("./topic_modeling/Neural_Topic_models/ETM_R_integration.py")
+# source_python("./topic_modeling/Neural_Topic_models/ETM_R_integration.py")
 library(text2vec)
 library(dplyr)
 library(quanteda)
