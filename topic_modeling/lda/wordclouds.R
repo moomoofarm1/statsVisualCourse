@@ -55,7 +55,7 @@ create_plots <- function(df_list,
     plot_topics_idx <- seq(1, length(df_list))
   } 
   for (i in plot_topics_idx){
-  #for (i in 1:length(df_list)){
+    #for (i in 1:length(df_list)){
     #view(df_list[[i]])
     if (test_type == "linear_regression"){
       estimate_col <- paste0(cor_var,".estimate") # grep(partial_name, data_frame_names, value = TRUE)
@@ -106,9 +106,9 @@ create_plots <- function(df_list,
         color_scheme + 
         labs(x = paste0("r = ", estimate),
              y= y)
-        
+      
       if (!dir.exists(save_dir)) {
-          # Create the directory
+        # Create the directory
         dir.create(save_dir)
         cat("Directory created successfully.\n")
       } 
@@ -138,6 +138,7 @@ plot_wordclouds <- function(model,
                             color_negative_cor,
                             color_positive_cor,
                             scale_size=TRUE,
+                            backColor="white",
                             plot_topics_idx,
                             p_threshold,
                             save_dir,
@@ -171,6 +172,7 @@ plot_wordclouds <- function(model,
                scale_size=scale_size,
                plot_topics_idx=plot_topics_idx,
                p_threshold=p_threshold,
+               backColor=backColor,
                save_dir=save_dir)
   print(paste0("The plots are saved in ", save_dir, "/seed", seed, "/wordclouds"))
 }
