@@ -49,6 +49,7 @@ create_plots <- function(df_list,
                          scale_size=TRUE,
                          plot_topics_idx=NULL,
                          p_threshold=NULL,
+                         backColor="white",
                          save_dir="."){
   if (is.null(plot_topics_idx)){
     plot_topics_idx <- seq(1, length(df_list))
@@ -100,6 +101,7 @@ create_plots <- function(df_list,
         geom_text_wordcloud() +
         scale_size_area(max_size = max_size) +
         theme_minimal() +
+        theme(plot.background = element_rect(fill = backColor)) + # Set background color
         #theme(plot.margin = margin(0,0,0,0, "cm")) +
         color_scheme + 
         labs(x = paste0("r = ", estimate),
